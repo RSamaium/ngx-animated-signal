@@ -1,9 +1,9 @@
 {
   "name": "ngx-animated-signal",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "peerDependencies": {
-    "@angular/common": "^16.0.0",
-    "@angular/core": "^16.0.0"
+    "@angular/common": ">=16.0.0",
+    "@angular/core": ">=16.0.0"
   },
   "dependencies": {
     "popmotion": "^11.0.5",
@@ -12,5 +12,8 @@
   "sideEffects": false,
   "license": "MIT",
   "author": "Samuel Ronce",
-  "repository": "https://github.com/RSamaium/ngx-animated-signal"
+  "repository": "https://github.com/RSamaium/ngx-animated-signal",
+  "publishConfig": {
+    "access": "public"
+  }
 }

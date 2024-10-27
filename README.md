@@ -1,5 +1,9 @@
 # Angular Animated Signal
 
+![demo](demo.gif)
+
+Demo Link: [https://stackblitz.com/edit/stackblitz-starters-bv4aim?file=src%2Fapp.component.ts](https://stackblitz.com/edit/stackblitz-starters-bv4aim?file=src%2Fapp.component.ts)
+
 AnimatedSignal is a lightweight library that provides an easy way to animate low-level operations using Angular signals. It offers a simple and efficient approach to create smooth transitions and animations for your Angular applications.
 
 This library bridges the gap between Angular's reactive programming model and animation capabilities, allowing developers to easily incorporate fluid, state-based animations into their projects without complex setup or external dependencies.
@@ -100,7 +104,7 @@ export class CounterComponent {
 ### Complete Example
 
 ```typescript
-import { Component, computed, effect } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { animatedSignal } from 'ngx-animated-signal';
 
 @Component({
@@ -120,12 +124,12 @@ import { animatedSignal } from 'ngx-animated-signal';
       <!-- Controls -->
       <div class="controls">
         <button (click)="increment()">Add 20%</button>
-        <button (click)="stopAnimation()">Stop Animation</button>
         <button (click)="reset()">Reset</button>
       </div>
     </div>
   `,
-  styles: [`
+  styles: [
+    `
     .progress-container {
       width: 300px;
       height: 20px;
@@ -136,7 +140,8 @@ import { animatedSignal } from 'ngx-animated-signal';
       background: #4CAF50;
       transition: width 0.1s linear;
     }
-  `]
+  `,
+  ],
 })
 export class ProgressBarComponent {
   // Create animated signal with custom spring animation
@@ -144,7 +149,7 @@ export class ProgressBarComponent {
     type: 'spring',
     stiffness: 100,
     damping: 10,
-    mass: 1
+    mass: 1,
   });
 
   // Access the full animation state
@@ -159,17 +164,14 @@ export class ProgressBarComponent {
   }
 
   increment() {
-    this.progress.update(current => Math.min(current + 20, 100));
-  }
-
-  stopAnimation() {
-    this.progress.stop();
+    this.progress.update((current) => Math.min(current + 20, 100));
   }
 
   reset() {
     this.progress.set(0);
   }
 }
+
 ```
 
 This example demonstrates:

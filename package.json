@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "lib:build": "ng build animated-signal && cp README.md dist/ngx-animated-signal",
-    "lib:publish": "npm run lib:build && npm publish dist/ngx-animated-signal",
+    "lib:publish": "npm run lib:build && cd dist/ngx-animated-signal && npm publish",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:example": "node dist/example/server/server.mjs"
